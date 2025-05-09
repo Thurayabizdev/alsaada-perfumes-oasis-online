@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { getProductById } from "@/data/products";
+import { getProductById, getProductsByCategory } from "@/data/products";
 import { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
 import ProductSlider from "@/components/ProductSlider";
@@ -23,8 +22,14 @@ const ProductDetail = () => {
       setProduct(foundProduct);
       
       // Get related products from same category
-      const related = getProductById(productId + "_related") || [];
-      setRelatedProducts(related);
+      const related = getProductById(productId + "_related");
+      // Fix: Check if related is an array, otherwise use an empty array
+      if (Array.isArray(related)) {
+        setRelatedProducts(related);
+      } else {
+        // If related products aren't available, set empty array
+        setRelatedProducts([]);
+      }
     }
     
     // Scroll to top when product changes
@@ -391,7 +396,13 @@ const ProductDetail = () => {
         {/* Related Products Section */}
         <div>
           <h2 className="section-title text-center mb-8">منتجات ذات صلة</h2>
-          <ProductSlider products={getProductsByCategory(product.category).filter(p => p.id !== product.id).slice(0, 6)} />
+          {product && (
+            <ProductSlider 
+              products={getProductsByCategory(product.category)
+                .filter(p => p.id !== product.id)
+                .slice(0, 6)} 
+            />
+          )}
         </div>
       </div>
     </div>
