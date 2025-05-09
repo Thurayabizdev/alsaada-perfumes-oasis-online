@@ -53,18 +53,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Alsaada custom colors
+				// Refined Alsaada color palette (just 3 colors)
 				alsaada: {
-					light: '#D5C090', // RGB 213 192 144
-					dark: '#353430',  // RGB 53 52 48
-					gold: '#D4AF37',
-					cream: '#F8F4E3',
-					stone: '#E5DFD9',
+					light: '#D5C090', // RGB 213 192 144 - Light shade
+					dark: '#353430',  // RGB 53 52 48 - Dark shade 
+					gold: '#91773F',  // RGB 145 119 64 - Gold accent
 				}
 			},
 			fontFamily: {
 				playfair: ['Playfair Display', 'serif'],
 				poppins: ['Poppins', 'sans-serif'],
+				somar: ['Somar Sans', 'sans-serif'], // Adding Somar Sans font
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -94,9 +93,6 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.7s ease-in-out',
 				'slide-up': 'slide-up 0.7s ease-out'
-			},
-			backgroundImage: {
-				'texture': "url('/texture.jpg')",
 			}
 		}
 	},
