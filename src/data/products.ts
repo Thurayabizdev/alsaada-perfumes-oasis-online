@@ -328,6 +328,122 @@ export const products: Product[] = [
     price: 155.00,
     image: "/lovable-uploads/9d652ae6-1315-410c-b077-2a197db09bc7.png",
     description: "عطر فاخر مستوحى من جمال الفيروز العماني، بتركيبة فريدة ومميزة."
+  },
+
+  // Bakhoor Products
+  {
+    id: "b1",
+    name: "بخور السعادة",
+    category: "bakhoor",
+    price: 35.00,
+    image: "/lovable-uploads/60268b61-0056-4fd9-8445-517b487b58f2.png",
+    description: "بخور فاخر بمكونات طبيعية 100%، برائحة تدوم طويلاً ونكهة غنية."
+  },
+  {
+    id: "b2",
+    name: "بخور العود",
+    category: "bakhoor",
+    price: 45.00,
+    image: "/lovable-uploads/60268b61-0056-4fd9-8445-517b487b58f2.png",
+    description: "بخور عود أصلي بجودة فائقة، يمنح منزلك عبقاً فريداً من نوعه."
+  },
+  {
+    id: "b3",
+    name: "بخور مسك",
+    category: "bakhoor",
+    price: 40.00,
+    image: "/lovable-uploads/60268b61-0056-4fd9-8445-517b487b58f2.png",
+    description: "بخور المسك الفاخر لإضفاء أجواء من الفخامة والراحة في المنزل."
+  },
+  {
+    id: "b4",
+    name: "بخور الورد",
+    category: "bakhoor",
+    price: 38.00,
+    image: "/lovable-uploads/60268b61-0056-4fd9-8445-517b487b58f2.png",
+    description: "بخور بنفحات الورد الطائفي، رائحة منعشة وهادئة تنعش منزلك."
+  },
+  {
+    id: "b5",
+    name: "بخور معطر",
+    category: "bakhoor",
+    price: 42.00,
+    image: "/lovable-uploads/60268b61-0056-4fd9-8445-517b487b58f2.png",
+    description: "بخور بمزيج فريد من العطور العربية الأصيلة، لمناسبات خاصة."
+  },
+  {
+    id: "b6",
+    name: "معمول البخور",
+    category: "bakhoor",
+    price: 50.00,
+    image: "/lovable-uploads/4f997b93-cf00-430e-9771-92fe77552b7b.png",
+    description: "معمول بخور فاخر، يحافظ على رائحته لفترة أطول، بتغليف فاخر."
+  },
+  {
+    id: "b7",
+    name: "لبان عماني",
+    category: "bakhoor",
+    price: 60.00,
+    image: "/lovable-uploads/e185e6d6-2a0c-4bb6-9c46-c8ca48551191.png",
+    description: "لبان عماني أصيل من جبال ظفار، ذو جودة عالية ونكهة فريدة."
+  },
+  {
+    id: "b8",
+    name: "دخون المناسبات",
+    category: "bakhoor",
+    price: 55.00,
+    image: "/lovable-uploads/4f997b93-cf00-430e-9771-92fe77552b7b.png",
+    description: "دخون فاخر للمناسبات الخاصة والأعياد، بعبوة أنيقة تصلح كهدية."
+  },
+  {
+    id: "b9",
+    name: "لبان الممتاز",
+    category: "bakhoor",
+    price: 70.00,
+    image: "/lovable-uploads/e185e6d6-2a0c-4bb6-9c46-c8ca48551191.png",
+    description: "لبان عماني من الدرجة الممتازة، بحجم قطع كبير ونقاوة عالية."
+  },
+  {
+    id: "b10",
+    name: "عود مبخر",
+    category: "bakhoor",
+    price: 65.00,
+    image: "/lovable-uploads/4f997b93-cf00-430e-9771-92fe77552b7b.png",
+    description: "أعواد عود طبيعية للتبخير، مناسبة للمنزل والمكتب، برائحة قوية وثابتة."
+  },
+  
+  // Green Collection
+  {
+    id: "g1",
+    name: "سلطان الخضراء",
+    category: "men",
+    price: 75.00,
+    image: "/lovable-uploads/30f48089-5157-484e-b0ea-3dba266635cd.png",
+    description: "عطر رجالي فاخر من المجموعة الخضراء، بنفحات خشبية وتوابل شرقية."
+  },
+  {
+    id: "g2",
+    name: "أميرة الخضراء",
+    category: "women",
+    price: 75.00,
+    image: "/lovable-uploads/2b217a3a-bc89-41d2-b8bf-c2e88486ecc8.png",
+    description: "عطر نسائي فاخر من المجموعة الخضراء، بنفحات زهرية وفواكه منعشة."
+  },
+  {
+    id: "g3",
+    name: "عود الخضراء",
+    category: "luxury",
+    price: 120.00,
+    image: "/lovable-uploads/3bd6d55b-a024-45fa-95d5-679135a18b99.png",
+    description: "عطر فاخر من المجموعة الخضراء بالعود الأصيل، تركيبة حصرية تدوم طويلاً."
+  },
+  {
+    id: "g4",
+    name: "فجر الخضراء",
+    category: "seasonal",
+    price: 65.00,
+    image: "/lovable-uploads/30f48089-5157-484e-b0ea-3dba266635cd.png",
+    description: "عطر موسمي من المجموعة الخضراء، مستوحى من نسائم الفجر في الربيع."
   }
 ];
 
@@ -341,4 +457,14 @@ export const getAllProducts = () => {
 
 export const getProductById = (id: string) => {
   return products.find(product => product.id === id);
+};
+
+export const getProductsByCollection = (collection: string) => {
+  if (collection === 'green') {
+    return products.filter(product => 
+      product.id === 'g1' || product.id === 'g2' || 
+      product.id === 'g3' || product.id === 'g4'
+    );
+  }
+  return [];
 };
