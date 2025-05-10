@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
 import CartButton from "./CartButton";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [productsDropdown, setProductsDropdown] = useState(false);
   const dropdownRef = useRef(null);
+  const { cart } = useCart();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -58,8 +60,13 @@ const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between relative">
         {/* Cart Button - Moved to left */}
-        <div className="flex items-center z-10">
-          <CartButton />
+        <div className="flex items-center z-10 gap-4">
+          <Link to="/cart" className="relative flex items-center justify-center p-2 text-alsaada-dark hover:text-alsaada-gold transition-colors" aria-label="عربة التسوق">
+            <ShoppingCart className="w-6 h-6" />
+            {cart.length > 0 && (
+              <span className="absolute -top-1 -right-1 bg-alsaada-gold text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{cart.reduce((sum, item) => sum + item.qty, 0)}</span>
+            )}
+          </Link>
         </div>
 
         {/* Desktop Navigation - Absolutely centered */}

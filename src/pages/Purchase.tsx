@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { products as allProducts } from "@/data/products";
 import { Product } from "@/components/ProductCard";
+import { useCart } from "@/context/CartContext";
 
 const getRandomSuggestions = (excludeIds: string[], count = 4) => {
   const filtered = allProducts.filter(p => !excludeIds.includes(p.id));
@@ -8,20 +9,7 @@ const getRandomSuggestions = (excludeIds: string[], count = 4) => {
 };
 
 const Purchase: React.FC = () => {
-  const [cart, setCart] = useState<{ product: Product; qty: number }[]>([]);
-
-  const addToCart = (product: Product) => {
-    setCart(prev => {
-      const found = prev.find(item => item.product.id === product.id);
-      if (found) {
-        return prev.map(item =>
-          item.product.id === product.id ? { ...item, qty: item.qty + 1 } : item
-        );
-      } else {
-        return [...prev, { product, qty: 1 }];
-      }
-    });
-  };
+  const { cart, addToCart } = useCart();
 
   const total = cart.reduce((sum, item) => sum + item.product.price * item.qty, 0);
   const suggestions = getRandomSuggestions(cart.map(item => item.product.id));

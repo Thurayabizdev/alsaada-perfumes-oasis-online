@@ -1,4 +1,3 @@
-
 import React from "react";
 import Hero from "@/components/Hero";
 import CategorySection from "@/components/CategorySection";
@@ -7,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getProductsByCategory } from "@/data/products";
+import Cart from "./Cart";
 
 const FeaturedProducts = () => {
   return (

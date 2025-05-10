@@ -1,7 +1,7 @@
-
 import React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
 
 export interface Product {
   id: string;
@@ -18,8 +18,10 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { toast } = useToast();
+  const { addToCart } = useCart();
   
-  const addToCart = () => {
+  const handleAddToCart = () => {
+    addToCart(product);
     toast({
       title: "تمت الإضافة إلى السلة",
       description: `تمت إضافة ${product.name} إلى سلة التسوق`
@@ -70,7 +72,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         
         <div className="grid grid-cols-2 gap-2 mt-auto">
           <button 
-            onClick={addToCart}
+            onClick={handleAddToCart}
             className="bg-alsaada-gold hover:bg-alsaada-gold/90 text-white font-medium px-3 py-2 rounded transition-all shadow-md flex items-center justify-center gap-1"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

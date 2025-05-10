@@ -5,6 +5,7 @@ import { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
 import ProductSlider from "@/components/ProductSlider";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useCart } from "@/context/CartContext";
 
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -13,6 +14,7 @@ const ProductDetail = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  const { addToCart } = useCart();
   
   useEffect(() => {
     if (!productId) return;
@@ -38,7 +40,7 @@ const ProductDetail = () => {
   
   const handleAddToCart = () => {
     if (!product) return;
-    
+    addToCart(product);
     toast({
       title: "تمت الإضافة إلى السلة",
       description: `تمت إضافة ${product.name} (${quantity}) إلى سلة التسوق`
