@@ -1,0 +1,57 @@
+/* 
+  Font declarations for Alsaada Perfumes Oasis Online
+  Using Somar Sans as the primary font family
+*/
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somar Sans';
+  src: url('./SomarSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Variables for easy font usage */
+:root {
+  --font-somar: 'Somar Sans', system-ui, -apple-system, sans-serif;
+} 
