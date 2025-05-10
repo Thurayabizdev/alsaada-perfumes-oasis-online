@@ -56,14 +56,14 @@ const Navbar = () => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom flex items-center justify-between relative">
         {/* Cart Button - Moved to left */}
-        <div className="flex items-center">
+        <div className="flex items-center z-10">
           <CartButton />
         </div>
 
-        {/* Desktop Navigation - Centered */}
-        <div className="hidden md:flex flex-1 items-center justify-center">
+        {/* Desktop Navigation - Absolutely centered */}
+        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center w-max">
           <div className="flex items-center space-x-8 space-x-reverse flex-row-reverse">
             <Link
               to="/contact"
@@ -86,32 +86,40 @@ const Navbar = () => {
               </button>
               {productsDropdown && (
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-[#faf6ea] rounded-md shadow-lg py-4 px-8 z-10 flex flex-row items-center justify-center gap-12 min-w-[600px]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-[#faf6ea] rounded-md shadow-lg py-4 px-8 z-10 w-[700px] flex flex-row justify-between items-stretch text-center gap-0"
                 >
-                  <Link
-                    to="/products?category=men"
-                    className="text-lg font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1"
-                  >
-                    عطور رجالية
-                  </Link>
-                  <Link
-                    to="/products?category=women"
-                    className="text-lg font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1"
-                  >
-                    عطور نسائية
-                  </Link>
-                  <Link
-                    to="/products?category=seasonal"
-                    className="text-lg font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1"
-                  >
-                    عطور موسمية
-                  </Link>
-                  <Link
-                    to="/products?category=luxury"
-                    className="text-lg font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1"
-                  >
-                    عطور فاخرة
-                  </Link>
+                  <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
+                    <Link
+                      to="/products?category=men"
+                      className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
+                    >
+                      عطور<br/>رجالية
+                    </Link>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
+                    <Link
+                      to="/products?category=women"
+                      className="text-base font-somar text-alsaada-gold font-bold hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
+                    >
+                      عطور<br/>نسائية
+                    </Link>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
+                    <Link
+                      to="/products?category=seasonal"
+                      className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
+                    >
+                      عطور<br/>موسمية
+                    </Link>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
+                    <Link
+                      to="/products?category=luxury"
+                      className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
+                    >
+                      عطور<br/>فاخرة
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -125,7 +133,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo - Moved to right */}
-        <Link to="/" className="flex-shrink-0">
+        <Link to="/" className="flex-shrink-0 z-10">
           <h1 className="text-2xl font-somar font-bold text-alsaada-dark">ALSAADA</h1>
         </Link>
 
