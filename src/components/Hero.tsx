@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const heroImages = [
   {
-    src: "/lovable-uploads/30f48089-5157-484e-b0ea-3dba266635cd.png",
-    alt: "Alsaada Perfume 1"
+    src: "/Artboard/Artboard 23.webp",
+    alt: "Hero Background 1"
   },
   {
-    src: "/lovable-uploads/3bd6d55b-a024-45fa-95d5-679135a18b99.png",
-    alt: "Alsaada Perfume 2"
+    src: "/Artboard/Artboard 25.webp",
+    alt: "Hero Background 2"
   },
   {
-    src: "/lovable-uploads/2b217a3a-bc89-41d2-b8bf-c2e88486ecc8.png",
-    alt: "Alsaada Perfume 3"
+    src: "/Artboard/Artboard 28.webp",
+    alt: "Hero Background 3"
   }
 ];
 
@@ -27,7 +27,15 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#F8F4E3] overflow-hidden">
+    <div
+      className="relative min-h-screen flex items-center justify-center bg-[#F8F4E3] overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroImages[current].src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        transition: 'background-image 0.8s ease-in-out'
+      }}
+    >
       {/* Minimal pattern overlay */}
       <div className="absolute inset-0 z-0 minimal-pattern opacity-20"></div>
       <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center py-16">

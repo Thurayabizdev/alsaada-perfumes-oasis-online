@@ -73,16 +73,10 @@ const Navbar = () => {
         <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center w-max">
           <div className="flex items-center space-x-8 space-x-reverse flex-row-reverse">
             <Link
-              to="/contact"
+              to="/"
               className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
             >
-              اتصل بنا
-            </Link>
-            <Link
-              to="/about"
-              className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
-            >
-              من نحن
+              الرئيسية
             </Link>
             <div className="relative" ref={dropdownRef}>
               <button
@@ -100,7 +94,7 @@ const Navbar = () => {
                       to="/products?category=men"
                       className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
                     >
-                      عطور<br/>رجالية
+                      <span>عطور رجالية</span>
                     </Link>
                   </div>
                   <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
@@ -108,7 +102,7 @@ const Navbar = () => {
                       to="/products?category=women"
                       className="text-base font-somar text-alsaada-gold font-bold hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
                     >
-                      عطور<br/>نسائية
+                      <span>عطور نسائية</span>
                     </Link>
                   </div>
                   <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
@@ -116,7 +110,7 @@ const Navbar = () => {
                       to="/products?category=seasonal"
                       className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
                     >
-                      عطور<br/>موسمية
+                      <span>عطور موسمية</span>
                     </Link>
                   </div>
                   <div className="flex-1 flex flex-col justify-center items-center cursor-pointer">
@@ -124,17 +118,23 @@ const Navbar = () => {
                       to="/products?category=luxury"
                       className="text-base font-somar text-alsaada-dark hover:text-alsaada-gold transition-colors px-2 py-1 whitespace-nowrap"
                     >
-                      عطور<br/>فاخرة
+                      <span>عطور فاخرة</span>
                     </Link>
                   </div>
                 </div>
               )}
             </div>
             <Link
-              to="/"
+              to="/about"
               className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
             >
-              الرئيسية
+              من نحن
+            </Link>
+            <Link
+              to="/contact"
+              className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
+            >
+              اتصل بنا
             </Link>
           </div>
         </div>
@@ -161,21 +161,12 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6">
           <div className="flex flex-col space-y-4">
             <Link
-              to="/contact"
+              to="/"
               className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              اتصل بنا
+              الرئيسية
             </Link>
-            
-            <Link
-              to="/about"
-              className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              من نحن
-            </Link>
-            
             <div className="space-y-2">
               <p className="font-somar font-medium text-alsaada-dark">المنتجات</p>
               <div className="pl-4 space-y-2">
@@ -209,13 +200,19 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            
             <Link
-              to="/"
+              to="/about"
               className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              الرئيسية
+              من نحن
+            </Link>
+            <Link
+              to="/contact"
+              className="font-somar font-medium text-alsaada-dark hover:text-alsaada-gold transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              اتصل بنا
             </Link>
           </div>
         </div>

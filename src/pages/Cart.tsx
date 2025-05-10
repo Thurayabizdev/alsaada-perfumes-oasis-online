@@ -1,12 +1,13 @@
 import React from "react";
 import { useCart } from "@/context/CartContext";
+import ProductCard from "@/components/ProductCard";
 
 const Cart: React.FC = () => {
-  const { cart, updateQty, removeFromCart } = useCart();
+  const { cart, updateQty, removeFromCart, addToCart, allProducts } = useCart();
   const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-[#faf6ea] py-12">
+    <div className="min-h-screen bg-[#faf6ea] py-24">
       <div className="container-custom max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-alsaada-dark arabic-text">عربة التسوق</h1>
         {cart.length === 0 ? (
@@ -52,6 +53,14 @@ const Cart: React.FC = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="container-custom max-w-4xl mx-auto mt-12">
+        <h2 className="text-2xl font-bold mb-6 text-alsaada-dark arabic-text">منتجات إضافية</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {allProducts.slice(0, 6).map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

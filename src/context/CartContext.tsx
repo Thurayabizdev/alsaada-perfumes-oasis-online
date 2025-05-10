@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { Product } from "@/components/ProductCard";
+import { products as allProducts } from "@/data/products";
 
 type CartItem = { product: Product; qty: number };
 
@@ -9,6 +10,7 @@ type CartContextType = {
   removeFromCart: (productId: string) => void;
   updateQty: (productId: string, qty: number) => void;
   clearCart: () => void;
+  allProducts: Product[];
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -50,7 +52,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const clearCart = () => setCart([]);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQty, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQty, clearCart, allProducts }}>
       {children}
     </CartContext.Provider>
   );

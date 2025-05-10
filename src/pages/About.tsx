@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const About = () => {
@@ -8,33 +7,36 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="section-title text-center mb-12">عن السعادة</h1>
           
-          <div className="mb-12 bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="relative h-96">
-              <div className="absolute inset-0 bg-alsaada-dark/20"></div>
+          {/* Modern Our Story Section */}
+          <section className="mb-12 bg-alsaada-cream rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row-reverse items-stretch">
+            {/* Image Side */}
+            <div className="md:w-1/2 h-72 md:h-auto relative flex-shrink-0">
               <img 
                 src="/lovable-uploads/d30c1b65-c8b3-4d49-bcd6-751c5d9b5c84.png" 
                 alt="Alsaada Founder" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center md:rounded-l-2xl" 
+                style={{ minHeight: '100%' }}
               />
+              {/* Gold Accent Bar */}
+              <div className="absolute top-0 right-0 w-2 h-full bg-alsaada-gold hidden md:block rounded-tr-2xl rounded-br-2xl"></div>
             </div>
-            
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-alsaada-dark mb-4">قصتنا</h2>
-              <p className="mb-4 leading-relaxed">
-                تأسست شركة السعادة للعطور في عام 2015 في سلطنة عمان، على يد خبراء عمانيين في صناعة العطور 
-                بهدف إحياء التراث العماني العريق في صناعة العطور والبخور ونقله إلى العالم بأسلوب عصري وفاخر.
+            {/* Text Side */}
+            <div className="md:w-1/2 flex flex-col justify-center p-8 md:pr-12 md:pl-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-block w-8 h-1 rounded bg-alsaada-gold"></span>
+                <h2 className="text-3xl font-bold text-alsaada-dark mb-0">قصتنا</h2>
+              </div>
+              <p className="mb-4 leading-loose text-lg text-alsaada-dark/90">
+                تأسست شركة السعادة للعطور في عام 2015 في سلطنة عمان، على يد خبراء عمانيين في صناعة العطور بهدف إحياء التراث العماني العريق في صناعة العطور والبخور ونقله إلى العالم بأسلوب عصري وفاخر.
               </p>
-              <p className="mb-4 leading-relaxed">
-                نستمد الإلهام من الطبيعة العمانية الخلابة، من جبال الحجر وصحراء الربع الخالي ووديان شمال عمان الخضراء. 
-                نعتمد على المكونات الطبيعية ذات الجودة العالية، ونستخدم أحدث التقنيات في صناعة العطور للحصول على 
-                منتجات فاخرة تمتاز بالأصالة والابتكار.
+              <p className="mb-4 leading-loose text-lg text-alsaada-dark/90">
+                نستمد الإلهام من الطبيعة العمانية الخلابة، من جبال الحجر وصحراء الربع الخالي ووديان شمال عمان الخضراء. نعتمد على المكونات الطبيعية ذات الجودة العالية، ونستخدم أحدث التقنيات في صناعة العطور للحصول على منتجات فاخرة تمتاز بالأصالة والابتكار.
               </p>
-              <p className="leading-relaxed">
-                اليوم، أصبحت السعادة واحدة من أهم العلامات التجارية في مجال العطور الفاخرة في المنطقة، وتسعى باستمرار لتوسيع 
-                نطاق منتجاتها وتقديم تجارب عطرية فريدة لعملائها حول العالم.
+              <p className="leading-loose text-lg text-alsaada-dark/90">
+                اليوم، أصبحت السعادة واحدة من أهم العلامات التجارية في مجال العطور الفاخرة في المنطقة، وتسعى باستمرار لتوسيع نطاق منتجاتها وتقديم تجارب عطرية فريدة لعملائها حول العالم.
               </p>
             </div>
-          </div>
+          </section>
           
           <div className="mb-12 bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-8">
